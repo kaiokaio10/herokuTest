@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 
 // Nome da pasta do siste sera feito o build
-const appName = 'heroku-angular'
+const appName = 'heroku-angula'
 
 // local onde build irá gerar os arquivo
 const outputPath = `${__dirname}/dist/${appName}`;
@@ -14,12 +14,9 @@ const outputPath = `${__dirname}/dist/${appName}`;
 app.use(express.static(outputPath));
 
 //redirecionar qualquer requisição para o index.html
-app.get('/*', function(req,res){
-    const fullPath = path.join(__dirname + '/dist/heroku-angular/index.htm');
-    console.log(" Fetching from.." + fullPath);
-      res.sendFile(fullPath);
-  })
-  
+app.get('/*',(req,res) =>{
+    res.sendFile(`${outputPath}/index.html`)
+});
 
 // ouvir a porta que o heroky disponibilizar
 app.listen(process.env.PORT || 3000, function(){
