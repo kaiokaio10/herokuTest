@@ -13,7 +13,13 @@ const outputPath = `${__dirname}/dist/${appName}`;
 // seta o diretorio de build para servir o conteudo angular
 app.use(express.static(outputPath));
 
-
+//redirecionar qualquer requisição para o index.html
+app.get('/*', function(req,res){
+    const fullPath = path.join(__dirname + '/dist/heroku-angular/index.htm');
+    console.log(" Fetching from.." + fullPath);
+      res.sendFile(fullPath);
+  })
+  
 
 // ouvir a porta que o heroky disponibilizar
 app.listen(process.env.PORT || 3000, function(){
