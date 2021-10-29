@@ -22,7 +22,7 @@ export class AppDemoActions {
     @Input() stackblitz: string;
 
     scrollToDocs() {
-        document.getElementsByClassName('documentation')[0].scrollIntoView({behavior: 'smooth'});
+        document.getElementsByClassName('documentation')[0].scrollIntoView({ behavior: 'smooth' });
     }
 
     viewOnGithub() {

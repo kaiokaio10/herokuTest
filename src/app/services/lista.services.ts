@@ -4,23 +4,28 @@ import { Cliente } from "../model/cliente";
 
 @Injectable({ providedIn: 'root' })
 
-export class ClienteService {
-
+export class ListaService {
     apiURL: string = 'http://localhost:8080/cliente'
+    
     constructor(
-       private http: HttpClient
+        private http: HttpClient
     ) { }
 
-    enviar(dto: Cliente) : Promise<any>{
-        return this.http.post('http://localhost:8080/cliente' , dto)
+
+    altera(id:number) {
+        console.log(id)
+        return;
+    }
+
+    visualizar(lista: Cliente[]) : Promise<any> {
+        return this.http.get(this.apiURL )
         .toPromise()
         .then(Response => console.log(Response));
         
     }
- 
 
-
-
-
-
+    excluir(id:number) {
+        console.log(id)
+        return;
+    }
 }

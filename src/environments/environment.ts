@@ -4,14 +4,12 @@
 
 export const environment = {
   production: false,
-  useHerokuKeycloak: false,
   useHerokubackend: false,
   server: false,
   local: true,
   envName: 'loc',
   urlbackend: 'http://localhost',
   urlHome: 'http://localhost:4200/#/home',
-
 };
 
 

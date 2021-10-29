@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { Cliente } from 'src/app/model/cliente';
-import { ClienteService } from 'src/app/services/cliente.services';
+import { ClienteService } from 'src/app/services/cadastro.services';
 
 @Component({
   selector: 'app-cliente',
@@ -14,7 +14,7 @@ export class ClienteComponent implements OnInit {
   dto: Cliente = new Cliente();
 
   constructor(
-    private service :ClienteService,
+    private service: ClienteService,
     private messageService: MessageService
   ) { }
 

@@ -4,7 +4,6 @@ import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AppConfig } from '../domain/appconfig';
 import { AppConfigService } from '../service/appconfigservice';
-import { VersionService } from '../service/versionservice';
 
 @Component({
     selector: 'app-topbar',
@@ -81,12 +80,11 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
     versions: any[];
 
-    constructor(private router: Router, private versionService: VersionService, private configService: AppConfigService) { }
+    constructor(private router: Router, private configService: AppConfigService) { }
 
     ngOnInit() {
         this.config = this.configService.config;
         this.subscription = this.configService.configUpdate$.subscribe(config => this.config = config);
-        this.versionService.getVersions().then(data => this.versions = data);
 
         this.router.events.subscribe(event => {
             if (event instanceof NavigationEnd) {

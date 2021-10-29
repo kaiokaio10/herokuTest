@@ -7,24 +7,24 @@
     </div>
     <ul #topbarMenu class="topbar-menu">
         <li class="topbar-submenu">
-            <a tabindex="0" (click)="toggleMenu($event, 1)">Cadastro</a>
+            <a tabindex="0" (click)="toggleMenu($event, 1)">Cliente</a>
             <ul [@overlayMenuAnimation]="'visible'" *ngIf="activeMenuIndex === 1"
                 (@overlayMenuAnimation.start)="onOverlayMenuEnter($event)">
                 <li>
                     <a href="http://localhost:4200/#/cliente">
                         <img alt="Atlantis" src="assets/showcase/images/layouts/atlantis-logo.svg">
-                        <span>Cliente</span>
+                        <span>Cadastro</span>
                     </a>
                 </li>
                 <li>
-                    <a href="http://localhost:8080/cliente/listar">
+                    <a href="http://localhost:4200/#/lista">
                         <img alt="Atlantis" src="assets/showcase/images/layouts/atlantis-logo.svg">
-                        <span>listar</span>
+                        <span>lista</span>
                     </a>
                 </li>
             </ul>
         </li>
-        
+
         <li class="topbar-submenu">
             <a tabindex="0" (click)="toggleMenu($event, 3)">Front V.1.0.0</a>
             <ul [@overlayMenuAnimation]="'visible'" *ngIf="activeMenuIndex === 3"

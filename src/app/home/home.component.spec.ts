@@ -9,11 +9,11 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-        imports: [ RouterTestingModule ],
-        declarations: [ HomeComponent ],
-        providers: [ AppConfigService ]
+      imports: [RouterTestingModule],
+      declarations: [HomeComponent],
+      providers: [AppConfigService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
