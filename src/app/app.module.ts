@@ -18,16 +18,19 @@ import { AppNewsComponent } from './shared/template/news/app.news.component';
 import { AppConfigService } from './shared/template/service/appconfigservice';
 import { AppInputStyleSwitchModule } from './shared/template/switchtheme/app.inputstyleswitch.component';
 import { AppTopBarComponent } from './shared/template/topbar/app.topbar.component';
-import { ClienteComponent } from './cliente/cadastro/cliente.component';
 import {InputMaskModule} from 'primeng/inputmask';
 import {InputTextModule} from 'primeng/inputtext';
 import { RouterModule } from '@angular/router';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
-import { MessageService } from 'primeng/api';
-import { ListaComponent } from './cliente/lista/lista.component';
-import {TableModule} from 'primeng/table';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { ToastModule } from 'primeng/toast';
+import { CadastrarComponent } from './cliente/cadastrar/cadastrar.component';
+import { ListarComponent } from './cliente/listar/listar.component';
+
 
 @NgModule({
   declarations: [
@@ -38,8 +41,8 @@ import { DialogModule } from 'primeng/dialog';
     AppMenuComponent,
     AppConfigComponent,
     AppFooterComponent,
-    ClienteComponent,
-    ListaComponent,
+    CadastrarComponent,
+    ListarComponent,
   ],
   imports: [
     FormsModule,
@@ -60,12 +63,13 @@ import { DialogModule } from 'primeng/dialog';
     MessagesModule,
     MessageModule,
     TableModule,
-    DialogModule
-    
+    DialogModule,
+    ConfirmPopupModule,
+    ToastModule
     
 
   ],
-  providers: [ AppConfigService,  MessageService],
+  providers: [ AppConfigService,  MessageService, ConfirmationService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

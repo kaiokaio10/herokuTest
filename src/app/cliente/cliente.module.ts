@@ -3,18 +3,16 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { DropdownModule } from 'primeng/dropdown';
-import { ClienteComponent } from './cadastro/cliente.component';
-import { ListaComponent } from './lista/lista.component';
 import {DataViewModule} from 'primeng/dataview';
-import {DialogModule} from 'primeng/dialog'
-
-
+import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { ListarComponent } from './listar/listar.component';
 
   
  @NgModule({
   declarations: [
-    ClienteComponent,
-    ListaComponent
+    CadastrarComponent,
+    ListarComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -23,6 +21,8 @@ import {DialogModule} from 'primeng/dialog'
     ReactiveFormsModule,
     DropdownModule,
     DataViewModule,
+    FormsModule,
+    ,
   ],
 })
 export class ClienteModule { }

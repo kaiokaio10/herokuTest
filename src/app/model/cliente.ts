@@ -4,7 +4,7 @@ export class Cliente {
     nomeCompleto: string;
     idade: number;
     endereco: string;
-    numeroTelefone: number;
+    numeroTelefone: string;
     cpf: string;
 
 

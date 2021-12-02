@@ -26,7 +26,7 @@ declare let gtag: Function;
                     <a [routerLink]=" ['/home']" routerLinkActive="router-link-exact-active">Home</a>
                 </div>
                 <div class="menu-items">
-                    <a [routerLink]=" ['/cliente']" routerLinkActive="router-link-exact-active">cadastro</a>
+                    <a [routerLink]=" ['/cadastro']" routerLinkActive="router-link-exact-active">cadastro</a>
                 </div>
                 <div class="menu-items">
                 <a [routerLink]=" ['/lista']" routerLinkActive="router-link-exact-active">Lista</a>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListaComponent } from './cliente/lista/lista.component';
+import { ListarComponent } from './cliente/listar/listar.component';
 import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
@@ -9,13 +9,14 @@ const appRoutes: Routes = [
   },
 
   {
-    path: 'cliente',
+    path: 'cadastro',
     loadChildren: () => import(`./cliente/cliente-routing.module`).then(m => m.clienteRoutingModule),
   },
 
   {
-    path: 'lista', component: ListaComponent
+    path: 'lista', component: ListarComponent
   },
+
 
 
   { path: '', pathMatch: 'full', redirectTo: '/home' },
