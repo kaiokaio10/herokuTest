@@ -30,6 +30,9 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ToastModule } from 'primeng/toast';
 import { CadastrarComponent } from './cliente/cadastrar/cadastrar.component';
 import { ListarComponent } from './cliente/listar/listar.component';
+import { TipoTelefoneComponent } from './tipoTelefone/cadastrar/tipoTelefone.component';
+import { ListarTelefoneComponent } from './tipoTelefone/listar/listarTelefonecomponent';
+import {DropdownModule} from 'primeng/dropdown';
 
 
 @NgModule({
@@ -43,6 +46,8 @@ import { ListarComponent } from './cliente/listar/listar.component';
     AppFooterComponent,
     CadastrarComponent,
     ListarComponent,
+    TipoTelefoneComponent,
+    ListarTelefoneComponent,
   ],
   imports: [
     FormsModule,
@@ -65,7 +70,8 @@ import { ListarComponent } from './cliente/listar/listar.component';
     TableModule,
     DialogModule,
     ConfirmPopupModule,
-    ToastModule
+    ToastModule,
+    DropdownModule
     
 
   ],

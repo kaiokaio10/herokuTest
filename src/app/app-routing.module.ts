@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListarComponent } from './cliente/listar/listar.component';
 import { HomeComponent } from './home/home.component';
+import { ListarTelefoneComponent } from './tipoTelefone/listar/listarTelefonecomponent';
 
 const appRoutes: Routes = [
   {
@@ -15,6 +16,14 @@ const appRoutes: Routes = [
 
   {
     path: 'lista', component: ListarComponent
+  },
+
+  {
+    path: 'telefone', 
+    loadChildren: () => import(`./tipoTelefone/tipoTelefone-routing.module`).then(m => m.TipoTelefoneRoutingModule),
+  },
+  {
+    path: 'listatelefones', component: ListarTelefoneComponent
   },
 
 

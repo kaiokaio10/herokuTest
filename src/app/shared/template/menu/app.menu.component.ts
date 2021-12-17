@@ -23,7 +23,7 @@ declare let gtag: Function;
             <div class="layout-menu">
                 <div class="menu-category">Cliente</div>
                 <div class="menu-items">
-                    <a [routerLink]=" ['/home']" routerLinkActive="router-link-exact-active">Home</a>
+                    <a [routerLink]=" ['/home']" routerLinkActive="router-link-exact-active">home</a>
                 </div>
                 <div class="menu-items">
                     <a [routerLink]=" ['/cadastro']" routerLinkActive="router-link-exact-active">cadastro</a>
@@ -31,6 +31,13 @@ declare let gtag: Function;
                 <div class="menu-items">
                 <a [routerLink]=" ['/lista']" routerLinkActive="router-link-exact-active">Lista</a>
             </div>
+            <div class="menu-category">tipo telefone</div>
+            <div class="menu-items">
+                    <a [routerLink]=" ['/telefone']" routerLinkActive="router-link-exact-active">tipo</a>
+                </div>
+                <div class="menu-items">
+                    <a [routerLink]=" ['/listatelefones']" routerLinkActive="router-link-exact-active">listar</a>
+                </div>
             </div>
         </div>
     `,

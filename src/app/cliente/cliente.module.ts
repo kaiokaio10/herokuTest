@@ -6,7 +6,6 @@ import { DropdownModule } from 'primeng/dropdown';
 import {DataViewModule} from 'primeng/dataview';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { ListarComponent } from './listar/listar.component';
-
   
  @NgModule({
   declarations: [

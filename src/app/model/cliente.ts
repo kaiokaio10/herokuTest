@@ -6,6 +6,7 @@ export class Cliente {
     endereco: string;
     numeroTelefone: string;
     cpf: string;
+    idTipoTelefone: number;
 
 
 }

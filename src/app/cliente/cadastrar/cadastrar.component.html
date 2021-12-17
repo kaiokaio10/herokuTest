@@ -13,7 +13,7 @@
 
             <div class="p-col-12 p-md-6 p-lg-4">
                 <span>idade *</span>
-                <p-inputMask [(ngModel)]="dto.idade"  mask="9?99" placeholder="000"></p-inputMask>
+                <p-inputMask [(ngModel)]="dto.idade" mask="9?99" placeholder="000"></p-inputMask>
             </div>
 
             <div class="p-field" class="p-col-12 p-md-6 p-lg-4">
@@ -21,22 +21,32 @@
                 <input [(ngModel)]="dto.endereco" maxlength="300" name="endereco" type="text" pInputText>
             </div>
 
-            <div class="p-col-12 p-md-6 p-lg-4">
+            <div class="p-col-6 p-md-6 p-lg-4">
                 <span>Telefone</span>
-                <p-inputMask [(ngModel)]="dto.numeroTelefone" mask="(99)99999-999?9"
-                    placeholder="(00)00000-0000"></p-inputMask>
+                <p-inputMask [(ngModel)]="dto.numeroTelefone" mask="(99)99999-999?9" placeholder="(00)00000-0000">
+                </p-inputMask>
+            </div>
+
+            <div class="p-col-6 p-md-6 p-lg-4">
+                <span>Tipo de Telefone</span>
+                <p-dropdown (onChange)="recuperarTipoTelefone()" [(ngModel)]="dto.idTipoTelefone" inputId="tipoTelefone" name="tipoTelefone"
+                        [options]="listaTipo" placeholder="Selecione" optionLabel="tipo" optionValue="id"
+                        emptyMessage="Nenhum registro encontrado">
+                    </p-dropdown>
             </div>
 
             <div class="p-col-12 p-md-6 p-lg-4">
                 <span>cpf *</span>
                 <p-inputMask [(ngModel)]="dto.cpf" mask="999.999.999-99" placeholder="000.000.000-00"></p-inputMask>
             </div>
+            
+
 
             <div class="p-field p-col-12 p-md-4" style="padding-top: 22px;">
                 <div class="p-fluid p-formgrid p-grid ">
                     <div class="p-field p-col ">
-                        <button  (click)="save()" pButton pRipple type="button" label="salvar"
-                            class="p-button-rounded" [label]="edicao?'alterar': 'salvar'"></button>
+                        <button (click)="save()" pButton pRipple type="button" label="salvar" class="p-button-rounded"
+                            [label]="edicao?'alterar': 'salvar'"></button>
                     </div>
                     <div class="p-field p-col">
                         <button pButton pRipple type="button" label="voltar"

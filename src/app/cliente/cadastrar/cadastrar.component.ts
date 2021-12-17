@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { Cliente } from 'src/app/model/cliente';
-import { ClienteService } from 'src/app/services/cadastro.services';
+import { TipoTelefone } from 'src/app/model/tipo-telefone';
+import { ClienteService } from 'src/app/services/cliente.services';
 
 @Component({
   selector: 'app-cadastro',
@@ -14,8 +15,11 @@ import { ClienteService } from 'src/app/services/cadastro.services';
 export class CadastrarComponent implements OnInit {
 
 
-  dto: Cliente = new Cliente();
+  public dto: Cliente = new Cliente();
   public edicao: boolean = false;
+  public listaTipo: TipoTelefone[] = [];
+  public dtoTipo: TipoTelefone = new TipoTelefone();
+  public telefone: string;
 
   constructor(
     private service: ClienteService,
@@ -26,6 +30,7 @@ export class CadastrarComponent implements OnInit {
 
   ngOnInit(): void {
     this.recuperarInfRota();
+    this.carregarCombos();
   }
 
   salvar() {
@@ -107,10 +112,29 @@ export class CadastrarComponent implements OnInit {
   }
 
   save() {
+    console.log(this.dto);
+    
     return this.edicao ? this.alterar() : this.salvar();
   }
   voltar() {
     this.router.navigate(['/lista']);
+  }
+
+  recuperarTipoTelefone() {
+    if (this.dto.idTipoTelefone) {
+      
+      this.telefone = this.listaTipo.find(item => item.id == this.dto.idTipoTelefone).tipo;
+      console.log("recuperarTipoTelefone", this.listaTipo);
+    }
+  }
+ 
+  carregarCombos() {
+    this.service.pesquisarTipo().subscribe(retorno => {
+      this.listaTipo = retorno;
+      console.log("carregarCombos",this.listaTipo);
+    }, () => {
+      this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Erro ao realizar consulta' });
+    });
   }
 
 }
